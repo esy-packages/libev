@@ -14,12 +14,12 @@
     ],
     "buildsInSource": true,
     "exportedEnv": {
-      "LIBEV_CFLAGS": {
-          "val": "-I#{self.lib}",
+      "LIBEV_LIBS": {
+          "val": "-L#{self.lib}",
           "scope": "global"
       },
-      "LIBEV_LIBS": {
-          "val": "-L#{self.install / 'include'}",
+      "LIBEV_CFLAGS": {
+          "val": "-I#{self.install / 'include'}",
           "scope": "global"
       }
     }

@@ -15,7 +15,7 @@
     "buildsInSource": true,
     "exportedEnv": {
       "LIBEV_LIBS": {
-          "val": "-L#{self.lib}",
+          "val": "-L#{self.lib} -lev",
           "scope": "global"
       },
       "LIBEV_CFLAGS": {

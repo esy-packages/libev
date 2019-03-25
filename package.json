@@ -1,5 +1,5 @@
 {
-  "name": "esy-libev",
+  "name": "@esy-packages/libev",
   "version": "0.1.0",
   "description": "libev packaged for Esy",
   "license": "GPLv2",

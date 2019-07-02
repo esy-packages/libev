@@ -9,7 +9,7 @@
       [
         "bash",
         "-c",
-        "#{os == 'windows' ? './configure mingw64 --prefix=$cur__install' : './configure --prefix=$cur__install'}"
+        "#{os == 'windows' ? './configure mingw64 --host x86_64-w64-mingw32 --prefix=$cur__install' : './configure --prefix=$cur__install --disable-dependency-tracking'}"
       ],
       [
         "make"
@@ -30,8 +30,27 @@
       "LIBEV_CFLAGS": {
         "val": "-I#{self.install / 'include'}",
         "scope": "global"
+      },
+      "LDFLAGS": {
+        "scope": "global",
+        "val": "-L#{self.lib} -lev"
+      },
+      "CPPFLAGS": {
+        "scope": "global",
+        "val": "-I#{self.install / 'include'}"
+      },
+      "LD_LIBRARY_PATH": {
+        "scope": "global",
+        "val": "#{self.lib}:$LD_LIBRARY_PATH"
+      },
+      "LIBRARY_PATH": {
+        "scope": "global",
+        "val": "#{self.lib}:$LIBRARY_PATH"
+      },
+      "CPATH": {
+        "scope": "global",
+        "val": "#{self.install / 'include'}:$CPATH"
       }
     }
-  },
-  "dependencies": {}
+  }
 }

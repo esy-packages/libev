@@ -27,3 +27,4 @@ jobs:
       cd test_dir
       esy sh ../esy/test.sh
     displayName: 'Building and dry run'
+    condition: ne( variables['Agent.OS'], 'Windows_NT' )

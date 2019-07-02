@@ -13,7 +13,8 @@ echo "Using compiler: $CC"
 echo "include..."
 #ls -a $INCLUDE
 echo "lib.."
-env
+ls $(echo ${LIBEV_LIBS} | cut -c 3- | awk '{print $1}')
+
 
 $CC ./../../esy/test.c -o ./test.exe $LIBEV_CFLAGS $LIBEV_LIBS
 

@@ -13,13 +13,12 @@ echo "Using compiler: $CC"
 echo "include..."
 #ls -a $INCLUDE
 echo "lib.."
-ls $(echo ${LIBEV_LIBS} | cut -c 3- | awk '{print $1}')
-
+export LIBEV_LIB_PATH=$(echo ${LIBEV_LIBS} | cut -c 3- | awk '{print $1}')
 
 $CC ./../../esy/test.c -o ./test.exe $LIBEV_CFLAGS $LIBEV_LIBS
 
-export PATH=$PATH:$cur__bin:$cur__lib
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$cur__lib
+# export PATH=$PATH:$cur__include:$cur__lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LIBEV_LIB_PATH
 
 #echo "Augmented path: $PATH"
 

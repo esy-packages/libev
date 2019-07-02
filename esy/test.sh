@@ -13,7 +13,7 @@ echo "Using compiler: $CC"
 echo "include..."
 #ls -a $INCLUDE
 echo "lib.."
-ls -a $cur__lib
+ls -a $cur__install
 
 $CC ./../../esy/test.c -o ./test.exe $LIBEV_CFLAGS $LIBEV_LIBS
 

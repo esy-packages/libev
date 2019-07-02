@@ -9,7 +9,7 @@
       [
         "bash",
         "-c",
-        "#{os == 'windows' ? './configure mingw64 --prefix=$cur__install' : './configure --prefix=$cur__install --disable-dependency-tracking'}"
+        "#{os == 'windows' ? './configure mingw64 --host x86_64-w64-mingw32 --prefix=$cur__install' : './configure --prefix=$cur__install --disable-dependency-tracking'}"
       ],
       [
         "make"

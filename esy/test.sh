@@ -17,8 +17,8 @@ echo "lib.."
 
 $CC ./../../esy/test.c -o ./test.exe $LIBEV_CFLAGS $LIBEV_LIBS
 
-#export PATH=$PATH:$cur__bin:$cur__lib
-#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$cur__lib
+export PATH=$PATH:$cur__bin:$cur__lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$cur__lib
 
 #echo "Augmented path: $PATH"
 
